@@ -27,10 +27,5 @@ main {
 }
 
 .container-form {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    margin: auto;
+    
 }
