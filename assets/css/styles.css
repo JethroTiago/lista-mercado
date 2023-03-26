@@ -18,8 +18,14 @@ body {
 
 main {
     display: inline-block;
-    margin-top: 10%;
+    margin-top: 5%;
     padding: 15px;
+    position: relative;
+}
+
+main img {
+    width: 100%;
+    max-width: 400px;
 }
 
 .notas {
@@ -27,5 +33,20 @@ main {
 }
 
 .container-form {
-    
+    position: absolute;
+    left: 24%;
+    top: 26.5%;
+}
+
+.container-lista {
+    position: absolute;
+    left: 26%;
+    top: 32.5%;
+}
+
+.rodape {
+    color: whitesmoke;
+    position: absolute;
+    left: 29%;
+    top: 95%;
 }
