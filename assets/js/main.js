@@ -1,5 +1,16 @@
 let listaDeCompras = [];
 
 const formulario = document.querySelector('formulario');
-const campoDeEscrita = document.querySelector('receber-item');
-const botaoSalvar = document.querySelector('botao');
+const itensInput = document.querySelector('receber-item');
+
+formulario.addEventListener("submit", function(evento) {
+    evento.preventDefault();
+});
+
+function salvarItem() {
+    const comprasItem = itensInput.value
+    
+    listaDeCompras = {
+        valor: comprasItem
+    }
+}
