@@ -8,7 +8,8 @@ const ulItensComprados = document.getElementById("lista-itens-comprados");
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
     salvarItem();
-    exibeItens();   
+    exibeItens();
+    itensInput.focus();
 });
 
 function salvarItem() {
@@ -24,7 +25,7 @@ function salvarItem() {
         })
     }
     
-    console.log(listaDeCompras);
+    itensInput.value = '';
 }
 
 function exibeItens() {
