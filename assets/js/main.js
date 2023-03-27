@@ -9,11 +9,16 @@ formulario.addEventListener("submit", function (evento) {
 });
 
 function salvarItem() {
-    const comprasItem = itensInput.value
-    
-    listaDeCompras.push ({
-        valor: comprasItem
-    });
+    const comprasItem = itensInput.value;
+    const checarDuplicado = listaDeCompras.some((elemento) => elemento.valor === comprasItem)
 
+    if(checarDuplicado) {
+        alert("Item já existente!")
+    } else {
+        listaDeCompras.push ({
+            valor: comprasItem
+        })
+    }
+    
     console.log(listaDeCompras);
 }
