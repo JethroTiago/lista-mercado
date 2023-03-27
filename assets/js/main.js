@@ -40,7 +40,7 @@ function exibeItens() {
                 <span class="itens-comprados">${elemento.valor}</span>
             </div>
             <div>
-                <i class="deletar"></i>
+                <i class="fa-solid fa-trash-can"></i>
             </div>
         </li>         
             `
@@ -53,7 +53,7 @@ function exibeItens() {
                     <input type="text" class="size" value="${elemento.valor}"></input>
                 </div>
                 <div>
-                    <i class="deletar"></i>
+                    <i class="fa-solid fa-trash-can"></i>
                 </div>
             </li>
         `
