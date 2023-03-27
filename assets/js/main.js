@@ -44,7 +44,7 @@ function exibeItens() {
     const inputCheck = document.querySelectorAll('input[type="checkbox"]');
     inputCheck.forEach(i => {
         i.addEventListener('click', (evento) => {
-            console.log("Fui clicado");
+            console.log(evento.target.parentElement.parentElement.getAttribute('data-value'));
         })
     })
 }
