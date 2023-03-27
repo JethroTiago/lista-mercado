@@ -3,6 +3,7 @@ let listaDeCompras = [];
 const formulario = document.getElementById("formulario-itens");
 const itensInput = document.getElementById("receber-item");
 const ulItens = document.getElementById("lista-itens");
+const ulItensComprados = document.getElementById("lista-itens-comprados");
 
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
@@ -18,7 +19,8 @@ function salvarItem() {
         alert("Item já existente!")
     } else {
         listaDeCompras.push ({
-            valor: comprasItem
+            valor: comprasItem,
+            checar: false
         })
     }
     
@@ -27,8 +29,23 @@ function salvarItem() {
 
 function exibeItens() {
     ulItens.innerHTML = "";
+    ulItensComprados.innerHTML = ""; 
     listaDeCompras.forEach((elemento, indice) => {
-        ulItens.innerHTML += `
+        if(elemento.checar) {
+            ulItensComprados.innerHTML += `
+            <li class="item-compra" data-value="${indice}">
+            <div>
+                <input type="checkbox" checked class="clicavel" />
+                <span class="itens-comprados">${elemento.valor}</span>
+            </div>
+            <div>
+                <i class="deletar"></i>
+            </div>
+        </li>         
+            `
+
+        } else {
+            ulItens.innerHTML += `
             <li class="item-compra" data-value="${indice}">
                 <div>
                     <input type="checkbox" class="clicavel" />
@@ -39,12 +56,16 @@ function exibeItens() {
                 </div>
             </li>
         `
+        }
     });
 
     const inputCheck = document.querySelectorAll('input[type="checkbox"]');
     inputCheck.forEach(i => {
         i.addEventListener('click', (evento) => {
-            console.log(evento.target.parentElement.parentElement.getAttribute('data-value'));
+            const valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value');
+            listaDeCompras[valorDoElemento].checar = evento.target.checked
+            console.log(listaDeCompras[valorDoElemento].checar);
+            exibeItens();
         })
     })
 }
