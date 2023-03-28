@@ -54,7 +54,7 @@ function exibeItens() {
                     <input type="text" class="size" value="${elemento.valor}"></input>
                 </div>
                 <div>
-                    <i class="fa-regular fa-floppy-disk is-clickable"></i>
+                    <button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>
                     <i class="fa-regular is-clickable fa-pen-to-square editar"></i>
                     <i class="fa-solid fa-trash-can deletar"></i>
                 </div>
