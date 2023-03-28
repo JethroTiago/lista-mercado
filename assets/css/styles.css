@@ -44,6 +44,28 @@ main img {
     top: 32.5%;
 }
 
+input:disabled {
+    border: none;
+    background: none;
+    color: black;
+}
+
+input {
+    border: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.lista-itens-comprados {
+    text-decoration: line-through;
+}
+
 .deletar {
     cursor: pointer;
 }

@@ -93,5 +93,7 @@ function exibeItens() {
 
 function salvarEdicao() {
     const itemEditado = document.querySelector(`[data-value="${itemAEditar}"] input=[type="text"]`);
-    console.log(itemEditado.value);
+    listaDeCompras[itemAEditar].valor = itemAEditar.value;
+    itemAEditar = -1;
+    exibeItens();
 }
