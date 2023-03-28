@@ -1,4 +1,5 @@
 let listaDeCompras = [];
+let itemAEditar
 
 const formulario = document.getElementById("formulario-itens");
 const itensInput = document.getElementById("receber-item");
@@ -81,4 +82,12 @@ function exibeItens() {
         })
     })
 
+    const editarItens = document.querySelectorAll(".editar")
+    editarItens.forEach(i => {
+        i.addEventListener("click", (evento) => {
+            itemAEditar = evento.target.parentElement.parentElement.getAttribute('data-value');
+            exibeItens();
+            console.log(itemAEditar);
+        })
+    })
 }
