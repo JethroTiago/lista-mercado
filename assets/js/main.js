@@ -87,7 +87,11 @@ function exibeItens() {
         i.addEventListener("click", (evento) => {
             itemAEditar = evento.target.parentElement.parentElement.getAttribute('data-value');
             exibeItens();
-            console.log(itemAEditar);
         })
     })
+}
+
+function salvarEdicao() {
+    const itemEditado = document.querySelector(`[data-value="${itemAEditar}"] input=[type="text"]`);
+    console.log(itemEditado.value);
 }
