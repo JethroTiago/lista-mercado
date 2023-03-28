@@ -17,6 +17,7 @@ body {
 }
 
 main {
+    text-align: left;
     display: inline-block;
     margin-top: 5%;
     padding: 15px;
