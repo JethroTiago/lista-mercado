@@ -51,11 +51,10 @@ function exibeItens() {
             <li class="item-compra" data-value="${indice}">
                 <div>
                     <input type="checkbox" class="clicavel" />
-                    <input type="text" class="size" value="${elemento.valor}"></input>
+                    <input type="text" class="size" value="${elemento.valor}" ${indice !== Number(itemAEditar) ? 'disabled' : ''}></input>
                 </div>
                 <div>
-                    <button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>
-                    <i class="fa-regular is-clickable fa-pen-to-square editar"></i>
+                    ${ indice === Number(itemAEditar) ? '<button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>' : '<i class="fa-regular is-clickable fa-pen-to-square editar"></i>'}
                     <i class="fa-solid fa-trash-can deletar"></i>
                 </div>
             </li>
@@ -93,7 +92,7 @@ function exibeItens() {
 
 function salvarEdicao() {
     const itemEditado = document.querySelector(`[data-value="${itemAEditar}"] input=[type="text"]`);
-    listaDeCompras[itemAEditar].valor = itemAEditar.value;
+    listaDeCompras[itemAEditar].valor = itemEditado.value;
     itemAEditar = -1;
     exibeItens();
 }
