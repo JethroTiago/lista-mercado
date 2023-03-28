@@ -64,9 +64,19 @@ function exibeItens() {
     inputCheck.forEach(i => {
         i.addEventListener('click', (evento) => {
             const valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value');
-            listaDeCompras[valorDoElemento].checar = evento.target.checked
+            listaDeCompras[valorDoElemento].checar = evento.target.checked;
             console.log(listaDeCompras[valorDoElemento].checar);
             exibeItens();
         })
     })
+
+    const deletarItens = document.querySelectorAll(".deletar")
+    deletarItens.forEach(i => {
+        i.addEventListener('click', (evento) => {
+            valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value');
+            listaDeCompras.splice(valorDoElemento, 1);
+            exibeItens();
+        })
+    })
+
 }
