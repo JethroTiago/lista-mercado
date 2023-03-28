@@ -16,23 +16,23 @@ function salvarItem() {
     const comprasItem = itensInput.value;
     const checarDuplicado = listaDeCompras.some((elemento) => elemento.valor.toUpperCase() === comprasItem.toUpperCase());
 
-    if(checarDuplicado) {
+    if (checarDuplicado) {
         alert("Item já existente!")
     } else {
-        listaDeCompras.push ({
+        listaDeCompras.push({
             valor: comprasItem,
             checar: false
         })
     }
-    
+
     itensInput.value = '';
 }
 
 function exibeItens() {
     ulItens.innerHTML = "";
-    ulItensComprados.innerHTML = ""; 
+    ulItensComprados.innerHTML = "";
     listaDeCompras.forEach((elemento, indice) => {
-        if(elemento.checar) {
+        if (elemento.checar) {
             ulItensComprados.innerHTML += `
             <li class="item-compra" data-value="${indice}">
             <div>
@@ -53,6 +53,8 @@ function exibeItens() {
                     <input type="text" class="size" value="${elemento.valor}"></input>
                 </div>
                 <div>
+                    <i class="fa-regular fa-floppy-disk is-clickable"></i>
+                    <i class="fa-regular is-clickable fa-pen-to-square editar"></i>
                     <i class="fa-solid fa-trash-can deletar"></i>
                 </div>
             </li>
