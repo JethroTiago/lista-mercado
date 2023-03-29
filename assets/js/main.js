@@ -6,6 +6,10 @@ const itensInput = document.getElementById("receber-item");
 const ulItens = document.getElementById("lista-itens");
 const ulItensComprados = document.getElementById("lista-itens-comprados");
 
+function atualizaLocalStorage() {
+    localStorage.setItem('listaDeCompras', JSON.stringify(listaDeCompras));
+};
+
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
     salvarItem();
@@ -23,11 +27,11 @@ function salvarItem() {
         listaDeCompras.push({
             valor: comprasItem,
             checar: false
-        })
-    }
+        });
+    };
 
     itensInput.value = '';
-}
+};
 
 function exibeItens() {
     ulItens.innerHTML = "";
@@ -59,7 +63,7 @@ function exibeItens() {
                 </div>
             </li>
         `
-        }
+        };
     });
 
     const inputCheck = document.querySelectorAll('input[type="checkbox"]');
@@ -69,30 +73,33 @@ function exibeItens() {
             listaDeCompras[valorDoElemento].checar = evento.target.checked;
             console.log(listaDeCompras[valorDoElemento].checar);
             exibeItens();
-        })
-    })
+        });
+    });
 
-    const deletarItens = document.querySelectorAll(".deletar")
+    const deletarItens = document.querySelectorAll(".deletar");
     deletarItens.forEach(i => {
         i.addEventListener('click', (evento) => {
             valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value');
             listaDeCompras.splice(valorDoElemento, 1);
             exibeItens();
-        })
-    })
+        });
+    });
 
     const editarItens = document.querySelectorAll(".editar")
+
     editarItens.forEach(i => {
         i.addEventListener("click", (evento) => {
             itemAEditar = evento.target.parentElement.parentElement.getAttribute('data-value');
             exibeItens();
-        })
-    })
-}
+        });
+    });
+
+    atualizaLocalStorage();
+};
 
 function salvarEdicao() {
     const itemEditado = document.querySelector(`[data-value="${itemAEditar}"] input=[type="text"]`);
     listaDeCompras[itemAEditar].valor = itemEditado.value;
     itemAEditar = -1;
     exibeItens();
-}
+};
