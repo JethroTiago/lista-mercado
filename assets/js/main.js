@@ -5,10 +5,18 @@ const formulario = document.getElementById("formulario-itens");
 const itensInput = document.getElementById("receber-item");
 const ulItens = document.getElementById("lista-itens");
 const ulItensComprados = document.getElementById("lista-itens-comprados");
+const listaRecuperada = localStorage.getItem('listaDeCompras');
 
 function atualizaLocalStorage() {
     localStorage.setItem('listaDeCompras', JSON.stringify(listaDeCompras));
 };
+
+if(listaRecuperada) {
+    listaDeCompras = JSON.parse(listaRecuperada);
+    exibeItens();
+} else {
+    listaDeCompras = [];
+}
 
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
