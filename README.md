@@ -12,7 +12,7 @@ Uma aplicação criada com <strong>JavaScript</strong> puro, onde é possivel es
 
 ## Como Funciona:
 
-O usuário escreve o nome do peito que deseja comprar e adiciona-o a lista. Então pode editar e salvar em itens comprados ou excluir. Toda a informação é armazenada e não é excluída aí atualizar a página.
+O usuário escreve o nome do produto que deseja comprar e adiciona-o a lista. Então pode editar e salvar em itens comprados ou excluir. Toda a informação é armazenada e não é excluída aí atualizar a página.
 
 ## Linguagens e estruturas de desenvolvimento:
 
