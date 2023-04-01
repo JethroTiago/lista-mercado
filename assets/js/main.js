@@ -44,6 +44,7 @@ function salvarItem() {
 function exibeItens() {
     ulItens.innerHTML = "";
     ulItensComprados.innerHTML = "";
+
     listaDeCompras.forEach((elemento, indice) => {
         if (elemento.checar) {
             ulItensComprados.innerHTML += `
@@ -57,7 +58,6 @@ function exibeItens() {
             </div>
         </li>         
             `
-
         } else {
             ulItens.innerHTML += `
             <li class="item-compra" data-value="${indice}">
@@ -66,7 +66,7 @@ function exibeItens() {
                     <input type="text" class="size" value="${elemento.valor}" ${indice !== Number(itemAEditar) ? 'disabled' : ''}></input>
                 </div>
                 <div>
-                    ${ indice === Number(itemAEditar) ? '<button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>' : '<i class="fa-regular is-clickable fa-pen-to-square editar"></i>'}
+                    ${indice === Number(itemAEditar) ? '<button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>' : '<i class="fa-regular is-clickable fa-pen-to-square editar"></i>'}
                     <i class="fa-solid fa-trash-can deletar"></i>
                 </div>
             </li>
@@ -79,7 +79,6 @@ function exibeItens() {
         i.addEventListener('click', (evento) => {
             const valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value');
             listaDeCompras[valorDoElemento].checar = evento.target.checked;
-            console.log(listaDeCompras[valorDoElemento].checar);
             exibeItens();
         });
     });
@@ -106,7 +105,7 @@ function exibeItens() {
 };
 
 function salvarEdicao() {
-    const itemEditado = document.querySelector(`[data-value="${itemAEditar}"] input=[type="text"]`);
+    const itemEditado = document.querySelector(`[data-value="${itemAEditar}"] input[type="text"]`);
     listaDeCompras[itemAEditar].valor = itemEditado.value;
     itemAEditar = -1;
     exibeItens();
