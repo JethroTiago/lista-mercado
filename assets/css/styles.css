@@ -63,6 +63,10 @@ button {
     cursor: pointer;
 }
 
+.botao_salvar {
+    padding: 5px;
+}
+
 .lista-itens-comprados {
     text-decoration: line-through;
 }
