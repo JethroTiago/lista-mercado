@@ -4,7 +4,7 @@ Uma aplicação criada com <strong>JavaScript</strong> puro, onde é possivel es
 
 ### Deploy:
 
--- soon --
+https://lista-mercado-three.vercel.app/
 
 ### Visualização do Projeto:
 
