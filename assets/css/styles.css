@@ -29,6 +29,11 @@ main img {
     max-width: 400px;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
 .notas {
     width: 100%;
 }
@@ -37,6 +42,13 @@ main img {
     position: absolute;
     left: 24%;
     top: 26.5%;
+}
+
+.formulario {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 10px;
 }
 
 .container-lista {
